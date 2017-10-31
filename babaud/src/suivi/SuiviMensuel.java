@@ -1,9 +1,10 @@
 package suivi;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SuiviMensuel {
+public class SuiviMensuel implements Serializable {
 	
 	protected List<SuiviJournalier> lesJours;
 	
@@ -22,11 +23,11 @@ public class SuiviMensuel {
 		lesJours.add(new SuiviJournalier());
 	}
 
-	public double LireTemperature(int jour, int heure) {
-		return lesJours.get(jour).LireTemperature(heure);
+	public double LireTemperature(int jour, int heure,int minute) {
+		return lesJours.get(jour).LireTemperature(heure,minute);
 	}
 
-	public void AjoutNouvelleMesure(int jour, int heure, double uneTemperature) {
-		lesJours.get(jour).AjoutNouvelleMesure(heure, uneTemperature);
+	public void AjoutNouvelleMesure(int jour, int heure,int minute, double uneTemperature) {
+		lesJours.get(jour).AjoutNouvelleMesure(heure,minute, uneTemperature);
 	}
 }

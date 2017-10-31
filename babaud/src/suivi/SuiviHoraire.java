@@ -1,17 +1,27 @@
 package suivi;
 
-public class SuiviHoraire {
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+
+public class SuiviHoraire implements Serializable {
 	
-	protected double temperatureMesuree = -50.0;
+	protected List<SuiviMinute> lesMinutes;
 	
 	public SuiviHoraire() {
+		lesMinutes = new ArrayList<SuiviMinute>();
+		lesMinutes.add(new SuiviMinute());lesMinutes.add(new SuiviMinute());lesMinutes.add(new SuiviMinute());
+		lesMinutes.add(new SuiviMinute());lesMinutes.add(new SuiviMinute());lesMinutes.add(new SuiviMinute());
+		lesMinutes.add(new SuiviMinute());lesMinutes.add(new SuiviMinute());lesMinutes.add(new SuiviMinute());
+		lesMinutes.add(new SuiviMinute());lesMinutes.add(new SuiviMinute());lesMinutes.add(new SuiviMinute());
+		lesMinutes.add(new SuiviMinute());lesMinutes.add(new SuiviMinute());lesMinutes.add(new SuiviMinute());
 	}
 		
-	public double LireTemperature() {
-		return temperatureMesuree;
+	public double LireTemperature(int minute) {
+		return lesMinutes.get(minute).LireTemperature();
 	}
 
-	public void AjoutNouvelleMesure(double uneTemperature) {
-		temperatureMesuree = uneTemperature;
+	public void AjoutNouvelleMesure(int minute,double uneTemperature) {
+		lesMinutes.get(minute).AjoutNouvelleMesure(uneTemperature);
 	}
 }
