@@ -16,6 +16,7 @@ public class SuiviAnnuel {
 	}
 
 	public double LireTemperature(int mois, int jour, int heure) {
+		System.out.println("");
 		return lesMois.get(mois).LireTemperature(jour,heure);
 	}
 
