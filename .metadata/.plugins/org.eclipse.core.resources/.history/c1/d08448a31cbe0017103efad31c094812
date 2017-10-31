@@ -1,0 +1,23 @@
+package suivi;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class SuiviHoraire {
+	
+	protected List<SuiviMinute> lesMinutes;
+	
+	public SuiviHoraire() {
+		lesMinutes = new ArrayList<SuiviMinute>();
+		lesMinutes.add(new SuiviMensuel());lesMinutes.add(new SuiviMensuel());lesMinutes.add(new SuiviMensuel());
+		
+	}
+		
+	public double LireTemperature(int minute) {
+		return temperatureMesuree;
+	}
+
+	public void AjoutNouvelleMesure(double uneTemperature) {
+		temperatureMesuree = uneTemperature;
+	}
+}

@@ -1,0 +1,16 @@
+package suivi;
+
+public class SuiviHoraire {
+	
+	
+	public SuiviHoraire() {
+	}
+		
+	public double LireTemperature() {
+		return temperatureMesuree;
+	}
+
+	public void AjoutNouvelleMesure(double uneTemperature) {
+		temperatureMesuree = uneTemperature;
+	}
+}
