@@ -16,4 +16,9 @@ public class SuiviMinute implements Serializable {
 	public void AjoutNouvelleMesure(double uneTemperature) {
 		temperatureMesuree = uneTemperature;
 	}
+	
+	public double TemperatureMoyenne() {
+		return temperatureMesuree;
+	}
+	
 }
