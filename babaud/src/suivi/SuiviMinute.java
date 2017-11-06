@@ -28,8 +28,6 @@ public class SuiviMinute implements Serializable {
 		return temperatureMesuree;
 	}
 	
-<<<<<<< HEAD
-=======
 	/**  READ_OBJECT
 	 *  on surcharge readObject pour forcer à lire les champs de la classe dans le même ordre qu'on les a écrit.
 	 * 
@@ -53,5 +51,4 @@ public class SuiviMinute implements Serializable {
 		oos.writeObject(temperatureMesuree);
 	}
 	
->>>>>>> e390756aa10c2bdc60c3233bd14eec5fd051d82d
 }
