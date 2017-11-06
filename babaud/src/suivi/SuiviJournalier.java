@@ -27,4 +27,18 @@ public class SuiviJournalier implements Serializable {
 	public void AjoutNouvelleMesure(int heure,int minute, double uneTemperature) {
 		lesHeures.get(heure).AjoutNouvelleMesure(minute,uneTemperature);
 	}
+	
+	public double TemperatureMoyenne() {
+		double i = 0.0;
+		int j = 0;
+		for (SuiviHoraire s : lesHeures) {
+			 i+=s.TemperatureMoyenne();
+			 j++;
+		}
+		return (i/j);
+	}
+	
+	public double TemperatureMoyenne(int heure) {
+		return lesHeures.get(heure).TemperatureMoyenne();
+	}
 }

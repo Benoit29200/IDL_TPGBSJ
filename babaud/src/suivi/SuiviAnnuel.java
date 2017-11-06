@@ -23,4 +23,26 @@ public class SuiviAnnuel implements Serializable {
 	public void AjoutNouvelleMesure(int mois, int jour, int heure,int minute,double uneTemperature) {
 		lesMois.get(mois).AjoutNouvelleMesure(jour, heure, minute, uneTemperature);
 	}
+	
+	public double TemperatureMoyenne() {
+		double i = 0.0;
+		int j = 0;
+		for (SuiviMensuel s : lesMois) {
+			 i+=s.TemperatureMoyenne();
+			 j++;
+		}
+		return (i/j);
+	}
+	
+	public double TemperatureMoyenne(int mois) {
+		return lesMois.get(mois).TemperatureMoyenne();
+	}
+
+	public double TemperatureMoyenne(int mois,int jour) {
+		return lesMois.get(mois).TemperatureMoyenne(jour);
+	}
+	
+	public double TemperatureMoyenne(int mois, int jour, int heure) {
+		return lesMois.get(mois).TemperatureMoyenne(jour,heure);
+	}
 }
