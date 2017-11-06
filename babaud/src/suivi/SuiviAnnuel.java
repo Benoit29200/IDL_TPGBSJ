@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-<<<<<<< HEAD
 package suivi;
 
 import java.io.IOException;
@@ -107,9 +106,34 @@ public class SuiviAnnuel implements Serializable {
 	public double LireTemperature(int mois, int jour, int heure,int minute) {
 		return lesMois.get(mois).LireTemperature(jour,heure,minute);
 	}
-=======
->>>>>>> 66145ce3de41129ec2df5b2f6ea5e8328c198a85
 
+	public void AjoutNouvelleMesure(int mois, int jour, int heure,int minute,double uneTemperature) {
+		lesMois.get(mois).AjoutNouvelleMesure(jour, heure, minute, uneTemperature);
+	}
+	
+	public double TemperatureMoyenne() {
+		double i = 0.0;
+		int j = 0;
+		for (SuiviMensuel s : lesMois) {
+			 i+=s.TemperatureMoyenne();
+			 j++;
+		}
+		return (i/j);
+	}
+	
+	public double TemperatureMoyenne(int mois) {
+		return lesMois.get(mois).TemperatureMoyenne();
+	}
+
+	public double TemperatureMoyenne(int mois,int jour) {
+		return lesMois.get(mois).TemperatureMoyenne(jour);
+	}
+	
+	public double TemperatureMoyenne(int mois, int jour, int heure) {
+		return lesMois.get(mois).TemperatureMoyenne(jour,heure);
+	}
+}
+=======
 package suivi;
 
 import java.io.IOException;
@@ -188,8 +212,5 @@ public class SuiviAnnuel implements Serializable {
 		oos.writeObject(lesMois);
 	}
 }
-<<<<<<< HEAD
 >>>>>>> e390756aa10c2bdc60c3233bd14eec5fd051d82d
 >>>>>>> 7ce237c512ec469ed81d851d71fc366cacb1023d
-=======
->>>>>>> 66145ce3de41129ec2df5b2f6ea5e8328c198a85
